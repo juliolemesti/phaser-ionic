@@ -19,7 +19,7 @@ module.exports = {
     dest: '{{BUILD}}'
   },
   copyPhaser: {
-    src: ['{{ROOT}}/node_modules/phaser/build/phaser.js'],
+    src: ['{{ROOT}}/node_modules/phaser/build/phaser.min.js'],
     dest: '{{BUILD}}'
   }
 };
