@@ -63,26 +63,22 @@ export class Game {
     }
 
     // Create the game object
-    this.game = new Phaser.Game(this.config.get("viewport.width"), this.config.get("viewport.height"), Phaser.AUTO, "game-container", this);
+    // this.game = new Phaser.Game(this.config.get("viewport.width"), this.config.get("viewport.height"), Phaser.AUTO, "game-container", this);
+    this.game = new Phaser.Game('100%', '100%', Phaser.AUTO, "game-container", this);
   }
 
   /**
    * Preload any necessary assets before moving to the Boot state.
    */
   public preload(): void {
+
   }
 
   /**
    * Used to execute once the preload() method is called.
    */
   public create(): void {
-    // If a statusbar plugin is provided, let's hide it
-    if (window.hasOwnProperty("StatusBar")) {
-      window.StatusBar.hide();
-    }
-
-    // Set the fullscreen scaling option
-    this.game.scale.fullScreenScaleMode = Phaser.ScaleManager.SHOW_ALL;
+    this.onGoFullScreen();
 
     // Define all of the game states we plan to use
     this.game.state.add("Boot", States.Boot);
@@ -90,6 +86,17 @@ export class Game {
 
     // Change to the Boot state to start the real work
     this.game.state.start("Boot");
+
+  }
+
+  // This function is called when a full screen request comes in
+  onGoFullScreen() {
+    // tell Phaser how you want it to handle scaling when you go full screen
+    this.game.scale.fullScreenScaleMode = Phaser.ScaleManager.EXACT_FIT;
+
+    // and this causes it to actually do it
+    this.game.scale.refresh();
+
   }
 
 }
