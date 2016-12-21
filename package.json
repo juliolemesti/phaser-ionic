@@ -34,7 +34,7 @@
     "phaser": "2.6.2"
   },
   "devDependencies": {
-    "@ionic/app-scripts": "nightly",
+    "@ionic/app-scripts": "0.0.48",
     "typescript": "2.0.9",
     "typings": "2.1.0"
   },
