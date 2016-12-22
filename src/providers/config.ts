@@ -23,12 +23,6 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class Config {
   /**
-   * An instance of of Config class for singleton use.
-   * @type {Configuration}
-   */
-  private static instance: Config = null;
-
-  /**
    * Config storage.
    * @type {{}}
    */
