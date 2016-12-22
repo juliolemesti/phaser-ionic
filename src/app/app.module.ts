@@ -1,22 +1,23 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-import { MyApp } from './app.component';
-import { Game } from './game.component';
+import { App } from './app.component';
+import { APP_PROVIDERS } from '../providers/providers';
 
 @NgModule({
   declarations: [
-    MyApp
+    App
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(App)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp
+    App
   ],
   providers: [
-    Game,
+    APP_PROVIDERS,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
-    ]
+  ]
 })
-export class AppModule {}
+export class AppModule {
+}

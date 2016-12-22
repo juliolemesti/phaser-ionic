@@ -1,5 +1,4 @@
-/// <reference path="../../../typings/globals/phaser/index.d.ts" />
-
+import { MemoryGame } from '../../minigames/memory/memory.game';
 export class Preload extends Phaser.State {
   sprite: Phaser.Sprite;
   cursors: Phaser.CursorKeys;
@@ -16,7 +15,9 @@ export class Preload extends Phaser.State {
       align: "center"
     };
 
-    let text = this.game.add.text(this.game.world.centerX, this.game.world.centerY, "Hello World", style);
+    let text = this.game.add.text(this.game.world.centerX, this.game.world.centerY, "Loading...", style);
     text.anchor.set(0.5);
+
+    this.game.state.add('MemoryGame', MemoryGame, true);
   }
 }

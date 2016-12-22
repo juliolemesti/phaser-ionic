@@ -15,28 +15,18 @@
  */
 
 import * as _ from "lodash";
+import { Injectable } from '@angular/core';
 
 /**
  * Provides a singleton configuration class.
  */
-export default class Config {
+@Injectable()
+export class Config {
   /**
    * An instance of of Config class for singleton use.
    * @type {Configuration}
    */
   private static instance: Config = null;
-
-  /**
-   * Get the singleton instance of the configuration.
-   * @returns {Config} Returns the configuration instance
-   */
-  public static getInstance(): Config {
-    if (Config.instance == null) {
-      Config.instance = new Config();
-    }
-
-    return Config.instance;
-  }
 
   /**
    * Config storage.
